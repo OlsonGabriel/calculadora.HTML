@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,51 +8,153 @@
     <link rel="stylesheet" href="estilos/media-query.css">
     <title>Calculadora</title>
 </head>
+
 <body>
     <div id="corpo">
         <div id="tela">
-
+            <div class="numerostela" id="n1"></div>
+            <div class="numerostela" id="n2">0</div>
 
         </div>
-        
+
         <div id="botoes">
             <div id="aux">
-                <input type="button" value="MC">
-                <input type="button" value="MR">
-                <input type="button" value="M+">
-                <input type="button" value="M-">
-                <input type="button" value="MS">
-                <input type="button" value="M">
+
+                <input type="button" value="MC" class="botaoaux">
+                <input type="button" value="MR" class="botaoaux">
+                <input type="button" value="M+" class="botaoaux">
+                <input type="button" value="M-" class="botaoaux">
+                <input type="button" value="MS" class="botaoaux">
+                <input type="button" value="M" class="botaoaux">
 
             </div>
-            <input type="button" value="%">
-            <input type="button" value="CE">
-            <input type="button" value="C">
-            <input type="button" value="<--">
-            <input type="button" value="1/X">
-            <input type="button" value="X2">
-            <input type="button" value="RAIZ/2">
-            <input type="button" value="/">
-            <input type="button" value="7">
-            <input type="button" value="8">
-            <input type="button" value="9">
-            <input type="button" value="*">
-            <input type="button" value="4">
-            <input type="button" value="5">
-            <input type="button" value="6">
-            <input type="button" value="-">
-            <input type="button" value="1">
-            <input type="button" value="2">
-            <input type="button" value="3">
-            <input type="button" value="+">
-            <input type="button" value="+/-">
-            <input type="button" value="0">
-            <input type="button" value=".">
-            <input type="button" value="=">
+            <input type="button" value="%" class="botaoface">
+            <input type="button" value="CE" class="botaoface">
+            <input type="button" value="C" class="botaoface" onclick="limpar()">
+            <input type="button" value="<--" class="botaoface">
+            <br>
+            <input type="button" value="1/X" class="botaoface">
+            <input type="button" value="X2" class="botaoface">
+            <input type="button" value="RAIZ/2" class="botaoface">
+            <input type="button" value="/" class="botaoface" onclick="fator('/')">
+            <br>
+            <input type="button" value="7" class="botaoface" onclick="num(7)">
+            <input type="button" value="8" class="botaoface" onclick="num(8)">
+            <input type="button" value="9" class="botaoface" onclick="num(9)">
+            <input type="button" value="*" class="botaoface" onclick="fator('*')">
+            <br>
+            <input type="button" value="4" class="botaoface" onclick="num(4)">
+            <input type="button" value="5" class="botaoface" onclick="num(5)">
+            <input type="button" value="6" class="botaoface" onclick="num(6)">
+            <input type="button" value="-" class="botaoface" onclick="fator('-')">
+            <br>
+            <input type="button" value="1" class="botaoface" onclick="num(1)">
+            <input type="button" value="2" class="botaoface" onclick="num(2)">
+            <input type="button" value="3" class="botaoface" onclick="num(3)">
+            <input type="button" value="+" class="botaoface" onclick="fator('+')">
+            <br>
+            <input type="button" value="+/-" class="botaoface">
+            <input type="button" value="0" class="botaoface" onclick="num(7)">
+            <input type="button" value="." class="botaoface">
+            <input type="button" value="=" class="botaoface" onclick="resultado()">
 
         </div>
 
     </div>
 
+    <script>
+        var telacalc2 = document.getElementById('n2')
+        var telacalc1 = document.getElementById('n1')
+        var f1
+        var f2
+        var f3 = 0
+        var cont = 0
+        var numerovisor = ''
+
+        function num(n) {
+            numerovisor = numerovisor + '' + n
+            telacalc2.innerText = numerovisor
+
+        }
+
+        function fator(fatorn) {
+
+
+            if (cont == 0) {
+                telacalc1.innerText = numerovisor + fatorn
+                f1 = Number(numerovisor)
+                fatorse = fatorn
+                telacalc2.innerText = ''
+                numerovisor = ''
+                cont = cont + 1
+
+            }else{
+                telacalc1.innerHTML = ''
+                telacalc1.innerText = f3 + fatorn
+                f3 = 0
+                fatorse = fatorn
+                telacalc2.innerText = ''
+                numerovisor = ''
+                cont = cont + 1
+
+            }
+
+        }
+
+        function resultado() {
+
+            telacalc1.innerText = ''
+            telacalc2.innerText = ''
+
+            f2 = Number(numerovisor)
+
+            //alert(fatorse)
+
+            //telacalc1.innerText = f1 + f2
+
+            if (fatorse == '+') {
+                telacalc1.innerText = f1 + f2
+                f3 = f1 + f1
+
+            } else if (fatorse == '-') {
+                telacalc1.innerText = f1 - f2
+                f3 = f1 - f1
+
+            } else if (fatorse == '/') {
+                telacalc1.innerText = f1 / f2
+                f3 = f1 / f1
+
+            } else if (fatorse == '*') {
+                telacalc1.innerText = f1 * f2
+                f3 = f1 * f1
+
+            }
+
+            f1 = ''
+            f2 = ''
+            fatorn = ''
+            fatorse = ''
+            numerovisor = ''
+            
+
+        }
+
+        function limpar() {
+            f1 = ''
+            f2 = ''
+            fatorn = ''
+            fatorse = ''
+            numerovisor = ''
+            f3 = 0
+
+            telacalc2.innerText = '0'
+            telacalc1.innerText = ''
+            cont = 0
+
+        }
+
+    </script>
+
 </body>
+
 </html>

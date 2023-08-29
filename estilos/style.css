@@ -1,9 +1,38 @@
 @charset "UTF-8";
 
-div#tela{
+#tela{
     background-color: black;
     color: white;
     width: 600px;
-    height: 90px;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    font: normal 40px Arial;
 
 }
+
+.numerostela{
+    text-align: right;
+    width: 600px;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.botaoaux{
+    width: 93px;
+    height: 40px;
+    margin: 2px;
+    padding: 0px;
+
+}
+
+.botaoface{
+    width: 143.3px;
+    height: 40px;
+    margin: 2px;
+    padding: 0px;
+
+}
+
