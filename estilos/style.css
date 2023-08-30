@@ -14,8 +14,10 @@ main{
 }
 
 #corpo{
+    background-color: darkgray;
+    margin: 5px;
+    border-radius: 10px;
     position: absolute;
-    left: 30%;
 
 }
 
@@ -27,6 +29,7 @@ main{
 
 #tela{
     background-color: black;
+    border-radius: 10px;
     color: white;
     width: 400px;
     height: 100px;
@@ -46,6 +49,12 @@ main{
 }
 
 .botaoface{
+    font: bold 18pt Arial;
+    color: white;
+    background-color: black;
+    border: 0;
+    border-radius: 5px;
+
     width: 93.2px;
     height: 40px;
     margin: 2px;
