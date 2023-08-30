@@ -19,6 +19,12 @@ main{
 
 }
 
+.calculadora{
+    display: block;
+    padding: 10px;
+    
+}
+
 #tela{
     background-color: black;
     color: white;
