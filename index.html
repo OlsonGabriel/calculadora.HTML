@@ -6,61 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/media-query.css">
+    
     <title>Calculadora</title>
 </head>
 
 <body>
-    <div id="corpo">
-        <div id="tela">
-            <div class="numerostela" id="n1"></div>
-            <div class="numerostela" id="n2">0</div>
-
-        </div>
-
-        <div id="botoes">
-            <div id="aux">
-
-                <input type="button" value="MC" class="botaoaux">
-                <input type="button" value="MR" class="botaoaux">
-                <input type="button" value="M+" class="botaoaux">
-                <input type="button" value="M-" class="botaoaux">
-                <input type="button" value="MS" class="botaoaux">
-                <input type="button" value="M" class="botaoaux">
-
+    <main>
+        <div id="corpo">
+            <div id="tela">
+                <div class="numerostela" id="n1"></div>
+                <div class="numerostela" id="n2">0</div>
             </div>
-            <input type="button" value="%" class="botaoface">
-            <input type="button" value="CE" class="botaoface">
-            <input type="button" value="C" class="botaoface" onclick="limpar()">
-            <input type="button" value="<--" class="botaoface">
-            <br>
-            <input type="button" value="1/X" class="botaoface">
-            <input type="button" value="X2" class="botaoface">
-            <input type="button" value="RAIZ/2" class="botaoface">
-            <input type="button" value="/" class="botaoface" onclick="fator('/')">
-            <br>
-            <input type="button" value="7" class="botaoface" onclick="num(7)">
-            <input type="button" value="8" class="botaoface" onclick="num(8)">
-            <input type="button" value="9" class="botaoface" onclick="num(9)">
-            <input type="button" value="*" class="botaoface" onclick="fator('*')">
-            <br>
-            <input type="button" value="4" class="botaoface" onclick="num(4)">
-            <input type="button" value="5" class="botaoface" onclick="num(5)">
-            <input type="button" value="6" class="botaoface" onclick="num(6)">
-            <input type="button" value="-" class="botaoface" onclick="fator('-')">
-            <br>
-            <input type="button" value="1" class="botaoface" onclick="num(1)">
-            <input type="button" value="2" class="botaoface" onclick="num(2)">
-            <input type="button" value="3" class="botaoface" onclick="num(3)">
-            <input type="button" value="+" class="botaoface" onclick="fator('+')">
-            <br>
-            <input type="button" value="+/-" class="botaoface">
-            <input type="button" value="0" class="botaoface" onclick="num(7)">
-            <input type="button" value="." class="botaoface">
-            <input type="button" value="=" class="botaoface" onclick="resultado()">
-
+            <div id="botoes">
+                <input type="button" value="%" class="botaoface">
+                <input type="button" value="CE" class="botaoface">
+                <input type="button" value="C" class="botaoface" onclick="limpar()">
+                <input type="button" value="<--" class="botaoface">
+                <br>
+                <input type="button" value="1/X" class="botaoface">
+                <input type="button" value="X2" class="botaoface">
+                <input type="button" value="RAIZ/2" class="botaoface">
+                <input type="button" value="/" class="botaoface" onclick="fator('/')">
+                <br>
+                <input type="button" value="7" class="botaoface" onclick="num(7)">
+                <input type="button" value="8" class="botaoface" onclick="num(8)">
+                <input type="button" value="9" class="botaoface" onclick="num(9)">
+                <input type="button" value="*" class="botaoface" onclick="fator('*')">
+                <br>
+                <input type="button" value="4" class="botaoface" onclick="num(4)">
+                <input type="button" value="5" class="botaoface" onclick="num(5)">
+                <input type="button" value="6" class="botaoface" onclick="num(6)">
+                <input type="button" value="-" class="botaoface" onclick="fator('-')">
+                <br>
+                <input type="button" value="1" class="botaoface" onclick="num(1)">
+                <input type="button" value="2" class="botaoface" onclick="num(2)">
+                <input type="button" value="3" class="botaoface" onclick="num(3)">
+                <input type="button" value="+" class="botaoface" onclick="fator('+')">
+                <br>
+                <input type="button" value="+/-" class="botaoface">
+                <input type="button" value="0" class="botaoface" onclick="num(7)">
+                <input type="button" value="." class="botaoface">
+                <input type="button" value="=" class="botaoface" onclick="resultado()">
+            </div>
         </div>
-
-    </div>
+    </main>
 
     <script>
         var telacalc2 = document.getElementById('n2')
