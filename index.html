@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/media-query.css">
-    
+
     <title>Calculadora</title>
 </head>
 
@@ -56,11 +56,13 @@
     <script>
         var telacalc2 = document.getElementById('n2')
         var telacalc1 = document.getElementById('n1')
-        var f1
-        var f2
+        var f1 = 0
+        var f2 = 0
         var f3 = 0
+        var comp = 'prime'
         var cont = 0
         var numerovisor = ''
+        var fatorse
 
         function num(n) {
             numerovisor = numerovisor + '' + n
@@ -70,69 +72,77 @@
 
         function fator(fatorn) {
 
-
-            if (cont == 0) {
+            if (comp == 'prime') {
                 telacalc1.innerText = numerovisor + fatorn
                 f1 = Number(numerovisor)
                 fatorse = fatorn
-                telacalc2.innerText = ''
+                telacalc2.innerText = '0'
                 numerovisor = ''
-                cont = cont + 1
 
-            }else{
-                telacalc1.innerHTML = ''
+            } else if(comp == 'sec'){
                 telacalc1.innerText = f3 + fatorn
+                f1 = f3
                 f3 = 0
                 fatorse = fatorn
-                telacalc2.innerText = ''
+                telacalc2.innerText = '0'
                 numerovisor = ''
-                cont = cont + 1
 
             }
 
         }
 
         function resultado() {
-
-            telacalc1.innerText = ''
-            telacalc2.innerText = ''
-
-            f2 = Number(numerovisor)
-
             //alert(fatorse)
 
             //telacalc1.innerText = f1 + f2
+            if(numerovisor != ''){
+                cont = 1
 
-            if (fatorse == '+') {
-                telacalc1.innerText = f1 + f2
-                f3 = f1 + f1
-
-            } else if (fatorse == '-') {
-                telacalc1.innerText = f1 - f2
-                f3 = f1 - f1
-
-            } else if (fatorse == '/') {
-                telacalc1.innerText = f1 / f2
-                f3 = f1 / f1
-
-            } else if (fatorse == '*') {
-                telacalc1.innerText = f1 * f2
-                f3 = f1 * f1
+            }else{
+                cont = 0
 
             }
 
-            f1 = ''
-            f2 = ''
-            fatorn = ''
-            fatorse = ''
-            numerovisor = ''
-            
+            if (cont == 0) {
+                window.alert('Digite os numeros antes!')
+
+            } else if (cont >= 1) {
+                telacalc1.innerText = ''
+                telacalc2.innerText = ''
+
+                f2 = Number(numerovisor)
+                f3 = 0
+
+                if (fatorse == '+') {
+                    telacalc1.innerText = f1 + f2
+                    f3 = f1 + f1
+
+                } else if (fatorse == '-') {
+                    telacalc1.innerText = f1 - f2
+                    f3 = f1 - f1
+
+                } else if (fatorse == '/') {
+                    telacalc1.innerText = f1 / f2
+                    f3 = f1 / f1
+
+                } else if (fatorse == '*') {
+                    telacalc1.innerText = f1 * f2
+                    f3 = f1 * f1
+
+                }
+                comp = 'sec'
+                f1 = 0
+                f2 = 0
+                fatorn = ''
+                fatorse = ''
+                numerovisor = ''
+            }
 
         }
 
         function limpar() {
-            f1 = ''
-            f2 = ''
+            f1 = 0
+            f2 = 0
             fatorn = ''
             fatorse = ''
             numerovisor = ''
@@ -141,6 +151,7 @@
             telacalc2.innerText = '0'
             telacalc1.innerText = ''
             cont = 0
+            comp = 'prime'
 
         }
 
